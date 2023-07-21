@@ -34,13 +34,13 @@ const palaceSchema = new Schema({
     location: String,
     googleMapLink: String,
     constructionStart: {
-        type: Number,
+        type: String,
         default: function() {
             return new Date();
         },
     },
     constructionEnd: {
-        type: Number,
+        type: String,
         default: function() {
             return new Date();
         },

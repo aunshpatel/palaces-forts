@@ -1,22 +1,22 @@
 <%- include('../partials/header') %>
 
-<table id="palaceList">
-    <thead>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Palace/Fort Name</th>
+      <th>Location (City)</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% palaces.forEach(function(p) { %>
       <tr>
-        <th>Palace</th>
-        <th>Location</th>
-        <th></th>
+        <td><%= p.palaceName %></td>
+        <td><%= p.location %></td>
+        <td><a href="/palaces/<%= p._id %>">DETAILS</a></td>
       </tr>
-    </thead>
-    <tbody>
-      <% palaces.forEach(function(p) { %>
-        <tr>
-          <td><%= p.palaceName %></td>
-          <td><%= p.location %></td>
-          <td><a href="/palaces/<%= p._id %>">DETAILS</a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
+    <% }); %>
+  </tbody>
+</table>
 
 <%- include('../partials/footer') %>
