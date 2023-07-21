@@ -13,10 +13,6 @@ body {
     "main"
 }
 
-a {
-  color: #00B7FF;
-}
-
 body > nav {
   grid-area: nav;
   background-color: #B8C0C2;
