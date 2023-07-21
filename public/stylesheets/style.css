@@ -1,12 +1,9 @@
 * {
-  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
   font-family: Helvetica;
   color: #424748;
 }
 
 body {
-  /* padding: 50px; */
-  
   margin: 0;
   height: 100vh;
   display: grid;
