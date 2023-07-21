@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   font-family: Helvetica;
   color: #424748;
 }
@@ -26,6 +27,16 @@ nav > img {
   width: 40px;
   object-fit: contain;
   margin-right: auto;
+}
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E8ECEB;
+  padding: 20px;
+  overflow-y: scroll;
 }
 
 nav > a {
