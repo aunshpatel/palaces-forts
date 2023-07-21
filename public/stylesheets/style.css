@@ -95,3 +95,13 @@ body > main h1:first-child {
   width: 10rem;
   margin-left: auto;
 }
+
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#show-page div:nth-child(even) {
+  font-weight: bold;
+}

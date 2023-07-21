@@ -8,9 +8,9 @@ router.get('/', palacesCtrl.index);
 // GET /palaces/new
 router.get('/newPalaces', palacesCtrl.new);
 
-router.post('/', palacesCtrl.create);
+//  GET /palaces/:id 
+router.get('/:id', palacesCtrl.show);
 
-// GET /palaces/:id 
-// router.get('/:id', palacesCtrl.show);
+router.post('/', palacesCtrl.create);
 
 module.exports = router;

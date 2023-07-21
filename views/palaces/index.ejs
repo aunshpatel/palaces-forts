@@ -9,8 +9,14 @@
       </tr>
     </thead>
     <tbody>
-      <td>LVP</td>
-      <td>Baroda</td>
+      <% palaces.forEach(function(p) { %>
+        <tr>
+          <td><%= p.palaceName %></td>
+          <td><%= p.location %></td>
+          <td><a href="/palaces/<%= p._id %>">DETAILS</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
     </table>
 
 <%- include('../partials/footer') %>
