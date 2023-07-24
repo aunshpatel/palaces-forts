@@ -11,7 +11,7 @@
     </div>
     <div>Google Maps Link: </div>
     <div>
-        <%= palaces.googleMapLink %>
+        <a href="<%= palaces.googleMapLink %>"><%= palaces.googleMapLink %></a>
     </div>
     <div>Construction Start End: </div>
     <div>
@@ -31,7 +31,7 @@
     </div>
     <div>Open to Public: </div>
     <div>
-        <%= palaces.openToPublic ? 'Yes' : 'No' %>
+        <%= palaces.openToPublic %>
     </div>
 </section>
 
@@ -61,6 +61,7 @@
             <th>Date</th>
             <th>Review</th>
             <th>Rating</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -78,7 +79,13 @@
               <td><%= r.createdAt.toLocaleDateString() %></td>
               <td><%= r.content %></td>
               <td><%= r.rating %></td>
-              
+              <td>
+                <% if (user?._id.equals(r.user)) { %>
+                  <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                    <button type="submit">X</button>
+                  </form>
+                <% } %>
+              </td>
             </tr>
           <% }); %>
           <!-- Add a row to display the avg AFTER the forEach iteration  -->

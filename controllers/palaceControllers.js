@@ -17,7 +17,7 @@ function newPalace(req, res) {
 }
 
 async function create(req, res) {
-  req.body.openToPublic = !!req.body.openToPublic;
+  //req.body.openToPublic = !!req.body.openToPublic;
   try {
     const flight = await Palace.create(req.body);
     res.redirect(`/palaces`);

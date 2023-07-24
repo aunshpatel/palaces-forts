@@ -47,7 +47,10 @@ const palaceSchema = new Schema({
     },
     builtBy: String,
     currentOwner: String,
-    openToPublic: Boolean,
+    openToPublic: {
+      type: String,
+      values: ['Yes', 'Some Parts', 'No'],
+    },
     reviews: [reviewSchema]
 }, {
     timestamps: true
