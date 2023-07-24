@@ -35,4 +35,61 @@
     </div>
 </section>
 
+<% if(user) { %>
+    <br><br><h2>Reviews</h2>
+    <form id="add-review-form" method="POST"
+      action="/palaces/<%= palaces._id %>/reviews">
+      <label>Review:</label>
+      <textarea name="content"></textarea>
+      <label>Rating:</label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+      <input type="submit" value="Add Review">
+    </form>
+    <% } %>
+    
+    <% if (palaces.reviews.length) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Review</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Yep, we can define variables! -->
+          <% let total = 0 %>
+          <% palaces.reviews.forEach(function(r) { %>
+            <!-- Accumulate the total rating -->
+            <% total += r.rating %>
+            <tr>
+              <!-- .toLocaleDateString() provides a more friendly date format -->
+              <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
+                <br>
+                <%= r.userName %>
+              </td>
+              <td><%= r.createdAt.toLocaleDateString() %></td>
+              <td><%= r.content %></td>
+              <td><%= r.rating %></td>
+              
+            </tr>
+          <% }); %>
+          <!-- Add a row to display the avg AFTER the forEach iteration  -->
+          <tr>
+            <td colspan="3"></td>
+            <td><strong><%= (total / palaces.reviews.length).toFixed(1) %></strong></td>
+          </tr>
+        </tbody>
+      </table>
+    <% } else { %>
+      <h2>This Palace/Fort Has Reviews Yet</h2>
+    <% } %>
+
 <%- include('../partials/footer') %>

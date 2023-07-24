@@ -83,11 +83,22 @@ body > main h1:first-child {
 }
 
 #add-new-palace *,
-#add-review-form *,
-#add-performer-form * {
+#add-review-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
+}
+
+#add-review-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#add-review-form input[type="submit"]  {
+  width: 10rem;
+  grid-column: 2 / 3;
 }
 
 #add-new-palace input[type="submit"] {

@@ -12,6 +12,8 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var palacesRouter = require('./routes/palaces');
+const reviewsRouter = require('./routes/reviews');
+
 const passport = require('passport');
 const methodOverride = require('method-override');
 
@@ -45,6 +47,7 @@ app.use(function (req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/palaces', palacesRouter);
+app.use('/', reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
