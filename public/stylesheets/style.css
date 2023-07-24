@@ -141,3 +141,7 @@ table td {
 .login img {
   height: 30px;
 }
+
+#show-page > div > a:link {
+  color: blue;
+}
