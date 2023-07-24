@@ -1,38 +1,81 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <div>Name: </div>
-    <div>
-        <%= palaces.palaceName %>
-    </div>
-    <div>Location (City): </div>
-    <div>
-        <%= palaces.location %>
-    </div>
-    <div>Google Maps Link: </div>
-    <div>
-        <a href="<%= palaces.googleMapLink %>"><%= palaces.googleMapLink %></a>
-    </div>
-    <div>Construction Start End: </div>
-    <div>
-        <%= palaces.constructionStart %>
-    </div>
-    <div>Construction End Date: </div>
-    <div>
-        <%= palaces.constructionEnd %>
-    </div>
-    <div>Built By: </div>
-    <div>
-        <%= palaces.builtBy %>
-    </div>
-    <div>Current Owner: </div>
-    <div>
-        <%= palaces.currentOwner %>
-    </div>
-    <div>Open to Public: </div>
-    <div>
-        <%= palaces.openToPublic %>
-    </div>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          Name:
+        </td>
+        <td>
+          <%= palaces.palaceName %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Location (City):
+        </td>
+        <td>
+          <%= palaces.location %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Google Map Link:
+        </td>
+        <td>
+          <a href="<%= palaces.googleMapLink %>"><%= palaces.googleMapLink %></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Construction Start Date:
+        </td>
+        <td>
+          <%= palaces.constructionStart %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Construction End Date:
+        </td>
+        <td>
+          <%= palaces.constructionEnd %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Built By:
+        </td>
+        <td>
+          <%= palaces.builtBy %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Current Owner:
+        </td>
+        <td>
+          <%= palaces.currentOwner %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Open to Public:
+        </td>
+        <td>
+          <%= palaces.openToPublic %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h4>
+            Please note, the dates for 'Construction Start Date' and<br>'Construction End Date' can be approximate.
+          </h4>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <% if(user) { %>

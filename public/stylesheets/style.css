@@ -145,3 +145,10 @@ table td {
 #show-page > div > a:link {
   color: blue;
 }
+
+#show-page > table > tbody> tr:not(:last-child) > td {
+  text-align: left;
+}
+#show-page > table > tbody> tr:not(:last-child) > td:first-child {
+  font-weight: bold;
+}
