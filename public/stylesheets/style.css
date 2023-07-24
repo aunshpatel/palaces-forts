@@ -142,7 +142,7 @@ table td {
   height: 30px;
 }
 
-#show-page > div > a:link {
+#googleMapLink > a {
   color: blue;
 }
 
