@@ -104,7 +104,11 @@
             <th>Date</th>
             <th>Review</th>
             <th>Rating</th>
+            <% palaces.reviews.forEach(function(r) { %>
+            <% if (user?._id.equals(r.user)) { %>
             <th></th>
+            <% } %>
+            <% }); %>
           </tr>
         </thead>
         <tbody>
