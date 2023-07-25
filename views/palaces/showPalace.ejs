@@ -124,7 +124,7 @@
                 <%= r.userName %>
               </td>
               <td><%= r.createdAt.toLocaleDateString() %></td>
-              <td><%= r.content %></td>
+              <td><pre><%= r.content %></pre></td>
               <td><%= r.rating %></td>
               <% if (user?._id.equals(r.user)) { %>
               <td>
