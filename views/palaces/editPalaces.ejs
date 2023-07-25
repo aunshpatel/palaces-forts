@@ -2,34 +2,34 @@
 
 <form id="update-palace" action="#" method="POST">
     <label>Name: </label>
-    <input type="text" name="palaceName">
+    <input type="text" name="palaceName" value="<%= palaces.palaceName %>">
     <label>Location: </label>
     
-    <input type="text" name="location">
+    <input type="text" name="location" value="<%= palaces.location %>">
     <label>Google Maps Link: </label>
-    <input type="text" name="googleMapLink">
+    <input type="text" name="googleMapLink" value="<%= palaces.googleMapLink %>">
 
     <label>Construction Start Date: </label>
-    <input type="date" name="constructionStart">
+    <input type="date" name="constructionStart" value="<%= palaces.constructionStart %>">
 
     <label>Construction End Date: </label>
-    <input type="date" name="constructionEnd">
+    <input type="date" name="constructionEnd" value="<%= palaces.constructionEnd %>">
 
     <label>Built By: </label>
-    <input type="text" name="builtBy">
+    <input type="text" name="builtBy" value="<%= palaces.builtBy %>">
 
     <label>Current Owner: </label>
-    <input type="text" name="currentOwner">
+    <input type="text" name="currentOwner" value="<%= palaces.currentOwner %>">
 
     <label>Open to Public: </label>
 
     <select name="openToPublic">
-        <option value="Yes">Yes</option>
-        <option value="Some Parts">Some Parts</option>
-        <option value="No">No</option>
+        <option value="Yes" >Yes</option>
+        <option value="Some Parts" >Some Parts</option>
+        <option value="No" >No</option>
       </select>
 
-    <input id="addPalace" type="submit" value="Add Palace/Fort">
+    <input id="updatePalace" type="submit" value="Update Palace/Fort">
 </form>
 
 <%- include('../partials/footer') %>
