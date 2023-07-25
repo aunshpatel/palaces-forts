@@ -76,9 +76,13 @@ body > main h1:first-child {
   background-color: white;
 }
 
-#add-new-palace,
-#update-palace {
+#add-new-palace {
   display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+}
+
+#update-palace {
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
@@ -103,11 +107,14 @@ body > main h1:first-child {
   grid-column: 2 / 3;
 }
 
-#add-new-palace input[type="submit"],
-#update-palace input[type="submit"] {
+#add-new-palace input[type="submit"] {
   grid-column: span 2;
   width: 10rem;
   margin-left: auto;
+}
+#update-palace {
+  text-align: center;
+  justify-content: center;
 }
 
 #show-page {
@@ -149,10 +156,10 @@ table td {
   color: blue;
 }
 
-#show-page > table > tbody> tr:not(:last-child) > td,
-#editPalaceRow {
+#show-page > table > tbody > tr:not(:last-child):not(#editPalaceRow) >td {
   text-align: left;
 }
+
 #show-page > table > tbody> tr:not(:last-child) > td:first-child {
   font-weight: bold;
 }
