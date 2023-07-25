@@ -98,7 +98,7 @@ body > main h1:first-child {
   margin-bottom: 2rem;
 }
 
-.review-form input[type="submit"] {
+.review-form input[type="submit"]{
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -149,7 +149,8 @@ table td {
   color: blue;
 }
 
-#show-page > table > tbody> tr:not(:last-child) > td {
+#show-page > table > tbody> tr:not(:last-child) > td,
+#editPalaceRow {
   text-align: left;
 }
 #show-page > table > tbody> tr:not(:last-child) > td:first-child {
