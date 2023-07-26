@@ -73,5 +73,5 @@ async function edit(req, res) {
       title: 'Edit Palace Review',
       reviews
     });
-}
+  }
   

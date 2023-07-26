@@ -1,25 +1,25 @@
 <%- include('../partials/header') %>
 
-<form id="update-palace" action="#" method="POST">
+<form id="update-palace" action="/palaces/<%= palace._id %>?_method=PUT" method="POST">
     <label>Name: </label>
-    <input type="text" name="palaceName" value="<%= palaces.palaceName %>">
+    <input type="text" name="palaceName" value="<%= palace.palaceName %>">
     <label>Location: </label>
     
-    <input type="text" name="location" value="<%= palaces.location %>">
+    <input type="text" name="location" value="<%= palace.location %>">
     <label>Google Maps Link: </label>
-    <input type="text" name="googleMapLink" value="<%= palaces.googleMapLink %>">
+    <input type="text" name="googleMapLink" value="<%= palace.googleMapLink %>">
 
     <label>Construction Start Date: </label>
-    <input type="date" name="constructionStart" value="<%= palaces.constructionStart %>">
+    <input type="date" name="constructionStart" value="<%= palace.constructionStart %>">
 
     <label>Construction End Date: </label>
-    <input type="date" name="constructionEnd" value="<%= palaces.constructionEnd %>">
+    <input type="date" name="constructionEnd" value="<%= palace.constructionEnd %>">
 
     <label>Built By: </label>
-    <input type="text" name="builtBy" value="<%= palaces.builtBy %>">
+    <input type="text" name="builtBy" value="<%= palace.builtBy %>">
 
     <label>Current Owner: </label>
-    <input type="text" name="currentOwner" value="<%= palaces.currentOwner %>">
+    <input type="text" name="currentOwner" value="<%= palace.currentOwner %>">
 
     <label>Open to Public: </label>
 

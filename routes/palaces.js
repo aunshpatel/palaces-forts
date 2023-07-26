@@ -16,4 +16,9 @@ router.post('/', palacesCtrl.create);
 
 //router.post('/', ensureLoggedIn, palacesCtrl.create);
 router.post('/', palacesCtrl.create);
+
+router.post('/:id/editPalaces', palacesCtrl.edit);
+
+router.put('/:id', palacesCtrl.update);
+
 module.exports = router;

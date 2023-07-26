@@ -76,19 +76,18 @@ body > main h1:first-child {
   background-color: white;
 }
 
-#add-new-palace {
+#add-new-palace,
+#update-palace,
+#updatePalaceBtnForm,
+.review-form {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
-}
-
-#update-palace {
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
 }
 
 #add-new-palace *,
 #update-palace *,
+#updatePalaceBtnForm *,
 .review-form *{
   font-size: 20px;
   padding: 5px;
@@ -107,14 +106,13 @@ body > main h1:first-child {
   grid-column: 2 / 3;
 }
 
-#add-new-palace input[type="submit"] {
+#add-new-palace input[type="submit"],
+#update-palace input[type="submit"],
+.review-form input[type="submit"],
+#updatePalaceBtnForm input[type="submit"] {
   grid-column: span 2;
-  width: 10rem;
+  width: 12rem;
   margin-left: auto;
-}
-#update-palace {
-  text-align: center;
-  justify-content: center;
 }
 
 #show-page {

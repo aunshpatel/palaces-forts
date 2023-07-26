@@ -67,6 +67,15 @@
           <%= palaces.openToPublic %>
         </td>
       </tr>
+      <% if(user) { %>
+        <tr>
+          <td colspan="2" id="editPalaceRow">
+            <form id="updatePalaceBtnForm" action="/palaces/<%= palaces._id %>/editPalaces" method="POST">
+              <input type="submit" value="Update Palace/Fort">
+            </form>
+          </td>
+        </tr>
+      <% } %>
       <tr>
         <td colspan="2">
           <h4>
