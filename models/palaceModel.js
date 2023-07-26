@@ -22,11 +22,20 @@ const reviewSchema = new Schema({
     userAvatar: String
   }, {
     timestamps: true
-  });
+});
 
+const imageSchema = new Schema({
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    link: String
+  }, {
+    timestamps: true
+});
 
 const palaceSchema = new Schema({
-    //id:mongoose.Schema.Types.ObjectId,
     palaceName: {
         type: String,
         required: true
@@ -47,10 +56,12 @@ const palaceSchema = new Schema({
     },
     builtBy: String,
     currentOwner: String,
+    images:[imageSchema],
     openToPublic: {
       type: String,
-      values: ['Yes', 'Some Parts', 'No'],
+      enum: ['Yes', 'Some Parts', 'No'],
     },
+    //photos:[{type:String}],
     reviews: [reviewSchema]
 }, {
     timestamps: true

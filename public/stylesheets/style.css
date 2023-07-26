@@ -161,3 +161,18 @@ table td {
 #show-page > table > tbody> tr:not(:last-child) > td:first-child {
   font-weight: bold;
 }
+
+.imageSlider{
+  width:700px;
+  border:1px solid black;
+  padding: 5px;
+  margin-bottom:25px
+}
+.slider{
+    overflow:auto;
+    white-space:nowrap;
+}
+.slider > img {
+  height: 250px;
+  padding:10px
+}

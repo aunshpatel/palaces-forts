@@ -92,11 +92,29 @@
     </tbody>
   </table>
 </section>
+<br><br>
+<h2>Pictures</h2>
+<div class="imageSlider">
+  <div class="slider">
+    <% if (palaces.images.length) { %>
+      <% palaces.images.forEach(function(image) { %>
+        <img src="<%= image.link %>">
+      <% }) %>
+    <% } %>
+  </div>
+</div>
 
 <% if(user) { %>
-    <br><br><h2>Reviews</h2>
-    <form class="review-form" method="POST"
-      action="/palaces/<%= palaces._id %>/reviews">
+    <p>* YOU CAN ONLY DELETE PICTURES UPLOADED BY YOU *</p>
+    <form class="review-form" method="POST" action="/palaces/<%= palaces._id %>/addImages">
+      <label>Add Link Of A Picture:</label>
+      <input type="text" name="link">
+      <input type="submit" value="Add Image">
+    </form>
+
+    <br><br>
+    <h2>Reviews</h2>
+    <form class="review-form" method="POST" action="/palaces/<%= palaces._id %>/reviews">
       <label>Review:</label>
       <textarea name="content"></textarea>
       <label>Rating:</label>
@@ -109,7 +127,7 @@
       </select>
       <input type="submit" value="Add Review">
     </form>
-    <% } %>
+  <% } %>
     
     <% if (palaces.reviews.length) { %>
       <table>
