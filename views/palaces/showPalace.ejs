@@ -24,7 +24,13 @@
           Google Map Link:
         </td>
         <td id="googleMapLink">
-          <a href="<%= palaces.googleMapLink %>" target=”_blank”>Click here to see the location of <%= palaces.palaceName %></a>
+          <% if (palaces.googleMapLink) { %>
+          <a href="<%= palaces.googleMapLink %>" target=”_blank”>
+            Click here to see the location of <%= palaces.palaceName %>
+          </a>
+          <% } else { %>
+           
+          <% } %>
         </td>
       </tr>
       <tr>
