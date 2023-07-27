@@ -8,7 +8,6 @@ async function index(req, res) {
 //Details of a palace
 async function show(req, res) {
   const palaces = await Palace.findById(req.params.id);
-  req.body.user = req.user.id;
   res.render('palaces/showPalace', { title: 'Palace/Fort Details', palaces});
 }
 
