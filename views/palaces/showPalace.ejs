@@ -96,10 +96,23 @@
 <h2>Pictures</h2>
 <div class="imageSlider">
   <div class="slider">
+
     <% if (palaces.images.length) { %>
       <% palaces.images.forEach(function(image) { %>
-        <img src="<%= image.link %>">
+        <div>
+          <img class="palaceImage" alt="<%= palaces.palaceName %>" src="<%= image.link %>">
+          <br><br>
+          <% if (user?._id.equals(image.user)) { %>
+          <form action="/photos/<%= image._id %>?_method=DELETE" method="POST">
+            <!-- <input type="button" value="Delete Photo" name="deletePhoto"/> -->
+            <button name="deletePhoto" type="submit">Delete Photo</button>
+          </form>
+          <% } %>
+          
+        </div>
       <% }) %>
+    <% } else {%>
+      <h2 id="noPictures">There are no pictures to display</h2>
     <% } %>
   </div>
 </div>

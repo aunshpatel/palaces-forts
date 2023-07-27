@@ -4,7 +4,7 @@ const imagesCtrl = require('../controllers/imageControllers');
 
 router.post('/palaces/:id/addImages', imagesCtrl.create);
 
-//router.delete('/images/:id', imagesCtrl.delete);
+router.delete('/photos/:id', imagesCtrl.delete);
 
 //Update a image(update button)
 //router.put('/images/:id', imagesCtrl.update);
