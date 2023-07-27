@@ -89,7 +89,6 @@
           <tr id="deletePalaceRow">
             <td colspan="2">
               <form id="deletePalaceBtnForm" action="/palaces/<%= palaces._id %>?_method=DELETE" method="POST">
-                <!-- <button type="submit">Delete</button> -->
                 <input type="submit" value="Delete Palace/Fort">
               </form>
             </td>
@@ -132,7 +131,6 @@
           <br><br>
           <% if (user?._id.equals(image.user)) { %>
           <form action="/photos/<%= image._id %>?_method=DELETE" method="POST">
-            <!-- <input type="button" value="Delete Photo" name="deletePhoto"/> -->
             <button name="deletePhoto" type="submit">Delete Photo</button>
           </form>
           <% } %>
@@ -187,13 +185,10 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Yep, we can define variables! -->
           <% let total = 0 %>
           <% palaces.reviews.forEach(function(r) { %>
-            <!-- Accumulate the total rating -->
             <% total += r.rating %>
             <tr>
-              <!-- .toLocaleDateString() provides a more friendly date format -->
               <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
                 <br>
                 <%= r.userName %>
@@ -213,7 +208,6 @@
               <% } %>
             </tr>
           <% }); %>
-          <!-- Add a row to display the avg AFTER the forEach iteration  -->
           <tr>
             <td colspan="3"></td>
             <td><strong><%= (total / palaces.reviews.length).toFixed(1) %></strong></td>

@@ -67,7 +67,6 @@ const palaceSchema = new Schema({
     type: String,
     enum: ['Yes', 'Some Parts', 'No'],
   },
-  //photos:[{type:String}],
   reviews: [reviewSchema]
 }, {
     timestamps: true
