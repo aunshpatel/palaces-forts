@@ -205,11 +205,11 @@ table td {
 
 @media  (max-width: 325px) {
  .imageSlider{
-    width: 300px;
+    width: 250px;
     height:280px
  } 
  .slider{
-  width: 280px;
+  width: 230px;
   height:280px;
  }
  #noPictures{
