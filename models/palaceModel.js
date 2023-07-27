@@ -36,34 +36,39 @@ const imageSchema = new Schema({
 });
 
 const palaceSchema = new Schema({
-    palaceName: {
-        type: String,
-        required: true
-    },
-    location: String,
-    googleMapLink: String,
-    website: String,
-    constructionStart: {
-        type: String,
-        default: function() {
-            return new Date();
-        },
-    },
-    constructionEnd: {
-        type: String,
-        default: function() {
-            return new Date();
-        },
-    },
-    builtBy: String,
-    currentOwner: String,
-    images:[imageSchema],
-    openToPublic: {
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  palaceName: {
       type: String,
-      enum: ['Yes', 'Some Parts', 'No'],
-    },
-    //photos:[{type:String}],
-    reviews: [reviewSchema]
+      required: true
+  },
+  location: String,
+  googleMapLink: String,
+  website: String,
+  constructionStart: {
+      type: String,
+      default: function() {
+          return new Date();
+      },
+  },
+  constructionEnd: {
+      type: String,
+      default: function() {
+          return new Date();
+      },
+  },
+  builtBy: String,
+  currentOwner: String,
+  images:[imageSchema],
+  openToPublic: {
+    type: String,
+    enum: ['Yes', 'Some Parts', 'No'],
+  },
+  //photos:[{type:String}],
+  reviews: [reviewSchema]
 }, {
     timestamps: true
 });

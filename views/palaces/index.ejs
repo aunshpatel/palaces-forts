@@ -3,14 +3,16 @@
 <table id="list">
   <thead>
     <tr>
+      <th>Sr No.</th>
       <th>Palace/Fort Name</th>
       <th>Location (City)</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <% palaces.forEach(function(p) { %>
+    <% var indexNo = 0;palaces.forEach(function(p, indexNo) { indexNo++;%>
       <tr>
+        <td><%= indexNo %>)</td>
         <td><%= p.palaceName %></td>
         <td><%= p.location %></td>
         <td><a href="/palaces/<%= p._id %>">DETAILS</a></td>

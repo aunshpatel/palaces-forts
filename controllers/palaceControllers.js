@@ -9,6 +9,7 @@ async function index(req, res) {
 //Details of a palace
 async function show(req, res) {
   const palaces = await Palace.findById(req.params.id);
+  req.body.user = req.user.id;
   res.render('palaces/showPalace', { title: 'Palace/Fort Details', palaces});
 }
 
@@ -18,6 +19,7 @@ function newPalace(req, res) {
 
 async function create(req, res) {
   //req.body.openToPublic = !!req.body.openToPublic;
+  req.body.user = req.user.id;
   try {
     await Palace.create(req.body);
     res.redirect(`/palaces`);
@@ -62,11 +64,17 @@ async function update(req, res) {
   res.redirect(`/palaces/${palace._id}`);
 }
 
+async function deletePalace(req, res) {
+  await Palace.findOneAndDelete({_id: req.params.id, user: req.user._id});
+  res.redirect(`/palaces`);
+}
+
 module.exports = {
     index,
     show,
     new: newPalace,
     create,
     edit,
-    update
+    update,
+    delete: deletePalace,
 }

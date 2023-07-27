@@ -12,6 +12,8 @@ router.get('/newPalaces',ensureLoggedIn, palacesCtrl.new);
 //  GET /palaces/:id 
 router.get('/:id', palacesCtrl.show);
 
+router.delete('/:id', palacesCtrl.delete);
+
 //router.post('/', palacesCtrl.create);
 
 router.post('/', ensureLoggedIn, palacesCtrl.create);
