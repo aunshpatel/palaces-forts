@@ -42,6 +42,7 @@ const palaceSchema = new Schema({
     },
     location: String,
     googleMapLink: String,
+    website: String,
     constructionStart: {
         type: String,
         default: function() {

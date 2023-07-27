@@ -3,9 +3,13 @@
 <form id="update-palace" action="/palaces/<%= palace._id %>?_method=PUT" method="POST">
     <label>Name: </label>
     <input type="text" name="palaceName" value="<%= palace.palaceName %>">
-    <label>Location: </label>
     
+    <label>Location: </label>
     <input type="text" name="location" value="<%= palace.location %>">
+
+    <label>Website: </label>
+    <input type="text" name="website" value="<%= palace.website %>">
+
     <label>Google Maps Link: </label>
     <input type="text" name="googleMapLink" value="<%= palace.googleMapLink %>">
 

@@ -45,6 +45,7 @@ async function update(req, res) {
   palace.user = req.user.id;
   palace.palaceName = req.body.palaceName;
   palace.location = req.body.location;
+  palace.website = req.body.website;
   palace.googleMapLink = req.body.googleMapLink;
   palace.constructionStart = req.body.constructionStart;
   palace.constructionEnd = req.body.constructionEnd;

@@ -21,9 +21,19 @@
       </tr>
       <tr>
         <td>
+          Website:
+        </td>
+        <td class="link">
+          <a href="<%= palaces.website %>" target=”_blank”>
+            <%= palaces.website %>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
           Google Map Link:
         </td>
-        <td id="googleMapLink">
+        <td class="link">
           <% if (palaces.googleMapLink) { %>
           <a href="<%= palaces.googleMapLink %>" target=”_blank”>
             Click here to see the location of <%= palaces.palaceName %>
