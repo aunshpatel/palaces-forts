@@ -18,7 +18,6 @@ function newPalace(req, res) {
 }
 
 async function create(req, res) {
-  //req.body.openToPublic = !!req.body.openToPublic;
   req.body.user = req.user.id;
   try {
     await Palace.create(req.body);
@@ -30,8 +29,6 @@ async function create(req, res) {
 }
 
 async function edit(req,res) {
-  //const palace = await Palace.findById(req.params.id);
-  console.log("req.params.id:"+req.params.id);
   const palace = await Palace.findById(req.params.id);
 
   res.render('palaces/editPalaces', {
@@ -41,26 +38,10 @@ async function edit(req,res) {
 }
 
 async function update(req, res) {
-  const palace = await Palace.findById(req.params.id);
-  console.log("palace:"+palace);
-
-  palace.user = req.user.id;
-  palace.palaceName = req.body.palaceName;
-  palace.location = req.body.location;
-  palace.website = req.body.website;
-  palace.googleMapLink = req.body.googleMapLink;
-  palace.constructionStart = req.body.constructionStart;
-  palace.constructionEnd = req.body.constructionEnd;
-  palace.builtBy = req.body.builtBy;
-  palace.currentOwner = req.body.currentOwner;
-  palace.openToPublic = req.body.openToPublic;
-
-  try {
-    await palace.save();
-  } catch (err) {
-    console.log(err);
-  }
-
+  const palace = await Palace.findOneAndUpdate({_id: req.params.id, user: req.user._id},
+    req.body,
+    {new: true}
+  );
   res.redirect(`/palaces/${palace._id}`);
 }
 
