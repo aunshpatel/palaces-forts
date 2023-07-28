@@ -6,22 +6,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     <script src="/javascript/main.js" defer></script>
     <title><%= title %></title>
   </head>
   <body>
-    <nav>
-      <img src="/images/city-palace-udaipur.png">
+    <!-- <nav> </nav> -->
+    <header id="nav-menu" aria-label="navigation bar">
+      <div class="container">
+        <div class="nav-start">
+          <a class="logo" href="/places">
+            <img id="navTagImage" src="/images/city-palace-udaipur.png" alt="Palaces Logo" />
+          </a>
+          <nav class="menu">
+            <ul class="menu-bar">
+              <li><a class="nav-link" href="/palaces">Palace/Fort List</a></li>
+              <% if (user) { %>
+                <li>
+                  <a class="nav-link" href="/palaces/newPalaces">Add Palace/Fort</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                <% } else { %>
+                  <li>
+                    <a class="nav-link" href="/auth/google"><div>
+                      LOG IN&nbsp;<img class="loginImg" src="https://i.imgur.com/FHjYyi0.png">
+                    </div></a>
+                  </li>
+                <% } %>
+            </ul>
+          </nav>
+        </div>
+    
+        <div class="nav-end">
+          <button id="hamburger" aria-label="hamburger" aria-haspopup="true" aria-expanded="false">
+            <i class="bx bx-menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- <div class="topnav" id="myTopnav">
+      <a href="/palaces">
+        <img id="navTagImage" src="/images/city-palace-udaipur.png">
+      </a>
+
       <a href="/palaces">Palace/Fort List</a>
-
-      <% if (user) { %>
-      <a href="/palaces/newPalaces">Add Palace/Fort</a>
-      <a href="/logout">Logout</a>
-      <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-      <% } %>
       
-    </nav>
+      <% if (user) { %>
+        <a href="/palaces/newPalaces">Add Palace/Fort</a>
+        <a href="/logout">Logout</a>
+        <% } else { %>
+          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
 
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div> -->
     <main>
       <h1><%= title %></h1>
