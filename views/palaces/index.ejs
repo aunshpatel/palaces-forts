@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
-<table id="list">
-  <thead>
+<table id="allPalacesTable">
+  <thead id="allPalacesTH">
     <tr>
       <th>Sr No.</th>
       <th>Palace/Fort Name</th>
@@ -9,7 +9,7 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="allPalacesTB">
     <% var indexNo = 0;palaces.forEach(function(p, indexNo) { indexNo++;%>
       <tr>
         <td><%= indexNo %>)</td>
