@@ -102,6 +102,7 @@
           </td>
         </tr>
       <% } %>
+
       <tr>
         <td colspan="2">
           <h4>
@@ -119,11 +120,11 @@
     </tbody>
   </table>
 </section>
+
 <br><br>
 <h2>Pictures</h2>
 <div class="imageSlider">
   <div class="slider">
-
     <% if (palaces.images.length) { %>
       <% palaces.images.forEach(function(image) { %>
         <div>
@@ -168,54 +169,54 @@
     </form>
   <% } %>
     
-    <% if (palaces.reviews.length) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>Date</th>
-            <th>Review</th>
-            <th>Rating</th>
-            <% palaces.reviews.forEach(function(r) { %>
-            <% if (user?._id.equals(r.user)) { %>
-            <th></th>
-            <th></th>
-            <% } %>
-            <% }); %>
-          </tr>
-        </thead>
-        <tbody>
-          <% let total = 0 %>
+  <% if (palaces.reviews.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Review</th>
+          <th>Rating</th>
           <% palaces.reviews.forEach(function(r) { %>
-            <% total += r.rating %>
-            <tr>
-              <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
-                <br>
-                <%= r.userName %>
-              </td>
-              <td><%= r.createdAt.toLocaleDateString() %></td>
-              <td><pre><%= r.content %></pre></td>
-              <td><%= r.rating %></td>
-              <% if (user?._id.equals(r.user)) { %>
-              <td>
-                <a href="/palaces/<%= r._id %>/editReviews">Edit Review</a>
-              </td>
-              <td>
-                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                  <button type="submit">Delete</button>
-                </form>
-              </td>
-              <% } %>
-            </tr>
+          <% if (user?._id.equals(r.user)) { %>
+          <th></th>
+          <th></th>
+          <% } %>
           <% }); %>
+        </tr>
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% palaces.reviews.forEach(function(r) { %>
+          <% total += r.rating %>
           <tr>
-            <td colspan="3"></td>
-            <td><strong><%= (total / palaces.reviews.length).toFixed(1) %></strong></td>
+            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
+              <br>
+              <%= r.userName %>
+            </td>
+            <td><%= r.createdAt.toLocaleDateString() %></td>
+            <td><pre><%= r.content %></pre></td>
+            <td><%= r.rating %></td>
+            <% if (user?._id.equals(r.user)) { %>
+            <td>
+              <a href="/palaces/<%= r._id %>/editReviews">Edit Review</a>
+            </td>
+            <td>
+              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+            <% } %>
           </tr>
-        </tbody>
-      </table>
-    <% } else { %>
-      <h2>This Palace/Fort Has Reviews Yet</h2>
-    <% } %>
+        <% }); %>
+        <tr>
+          <td colspan="3"></td>
+          <td><strong><%= (total / palaces.reviews.length).toFixed(1) %></strong></td>
+        </tr>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h2>This Palace/Fort Has Reviews Yet</h2>
+  <% } %>
 
 <%- include('../partials/footer') %>

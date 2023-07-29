@@ -1,39 +1,39 @@
 <%- include('../partials/header') %>
 
 <form id="update-palace" action="/palaces/<%= palace._id %>?_method=PUT" method="POST">
-    <label>Name: </label>
-    <input type="text" name="palaceName" value="<%= palace.palaceName %>">
-    
-    <label>Location: </label>
-    <input type="text" name="location" value="<%= palace.location %>">
+  <label>Name: </label>
+  <input type="text" name="palaceName" value="<%= palace.palaceName %>">
+  
+  <label>Location: </label>
+  <input type="text" name="location" value="<%= palace.location %>">
 
-    <label>Website: </label>
-    <input type="text" name="website" value="<%= palace.website %>">
+  <label>Website: </label>
+  <input type="text" name="website" value="<%= palace.website %>">
 
-    <label>Google Maps Link: </label>
-    <input type="text" name="googleMapLink" value="<%= palace.googleMapLink %>">
+  <label>Google Maps Link: </label>
+  <input type="text" name="googleMapLink" value="<%= palace.googleMapLink %>">
 
-    <label>Construction Start Date: </label>
-    <input type="date" name="constructionStart" value="<%= palace.constructionStart %>">
+  <label>Construction Start Date: </label>
+  <input type="date" name="constructionStart" value="<%= palace.constructionStart %>">
 
-    <label>Construction End Date: </label>
-    <input type="date" name="constructionEnd" value="<%= palace.constructionEnd %>">
+  <label>Construction End Date: </label>
+  <input type="date" name="constructionEnd" value="<%= palace.constructionEnd %>">
 
-    <label>Built By: </label>
-    <input type="text" name="builtBy" value="<%= palace.builtBy %>">
+  <label>Built By: </label>
+  <input type="text" name="builtBy" value="<%= palace.builtBy %>">
 
-    <label>Current Owner: </label>
-    <input type="text" name="currentOwner" value="<%= palace.currentOwner %>">
+  <label>Current Owner: </label>
+  <input type="text" name="currentOwner" value="<%= palace.currentOwner %>">
 
-    <label>Open to Public: </label>
+  <label>Open to Public: </label>
 
-    <select name="openToPublic">
-        <option value="Yes" >Yes</option>
-        <option value="Some Parts" >Some Parts</option>
-        <option value="No" >No</option>
-      </select>
+  <select name="openToPublic">
+      <option value="Yes" >Yes</option>
+      <option value="Some Parts" >Some Parts</option>
+      <option value="No" >No</option>
+    </select>
 
-    <input id="updatePalace" type="submit" value="Update Palace/Fort">
+  <input id="updatePalace" type="submit" value="Update Palace/Fort">
 </form>
 
 <%- include('../partials/footer') %>

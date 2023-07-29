@@ -5,7 +5,6 @@ async function index(req, res) {
     res.render('palaces/index', { title: 'All Palaces/Forts', palaces });
 }
 
-//Details of a palace
 async function show(req, res) {
   const palaces = await Palace.findById(req.params.id);
   res.render('palaces/showPalace', { title: 'Palace/Fort Details', palaces});
@@ -28,7 +27,6 @@ async function create(req, res) {
 
 async function edit(req,res) {
   const palace = await Palace.findById(req.params.id);
-
   res.render('palaces/editPalaces', {
     title: 'Edit Palace/Fort Details',
     palace
@@ -49,11 +47,11 @@ async function deletePalace(req, res) {
 }
 
 module.exports = {
-    index,
-    show,
-    new: newPalace,
-    create,
-    edit,
-    update,
-    delete: deletePalace,
+  index,
+  show,
+  new: newPalace,
+  create,
+  edit,
+  update,
+  delete: deletePalace,
 }

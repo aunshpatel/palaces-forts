@@ -6,18 +6,13 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 // GET /palaces
 router.get('/', palacesCtrl.index);
 
-// GET /palaces/new
 router.get('/newPalaces',ensureLoggedIn, palacesCtrl.new);
 
-//  GET /palaces/:id 
 router.get('/:id', palacesCtrl.show);
 
 router.delete('/:id', palacesCtrl.delete);
 
-//router.post('/', palacesCtrl.create);
-
 router.post('/', ensureLoggedIn, palacesCtrl.create);
-//router.post('/', palacesCtrl.create);
 
 router.post('/:id/editPalaces', palacesCtrl.edit);
 

@@ -49,10 +49,10 @@ const palaceSchema = new Schema({
   googleMapLink: String,
   website: String,
   constructionStart: {
-      type: String,
-      default: function() {
-          return new Date();
-      },
+    type: String,
+    default: function() {
+        return new Date();
+    },
   },
   constructionEnd: {
       type: String,
@@ -71,6 +71,5 @@ const palaceSchema = new Schema({
 }, {
     timestamps: true
 });
-
 
 module.exports = mongoose.model('Palace', palaceSchema);
