@@ -209,6 +209,8 @@ table td {
 .menu {
   position: relative;
   background: var(--white);
+  height: 50px;
+  padding: 0;
 }
 
 .menu-bar li:first-child ul:nth-child(1) {
@@ -230,6 +232,30 @@ table td {
   padding: 0.3rem;
   min-width: 60px;
   margin: 0 0.6rem;
+}
+
+menu-bar{
+  padding: 0px !important;
+  height:40px !important;
+  margin: 5px !important;
+  justify-content: center;
+}
+
+#login-div, .nav-link{
+  height:40px;
+}
+
+.nav-link > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.menu-bar li{
+  display: block;margin-left:10px;
+  margin-right: 10px;
 }
 
 .nav-end{height:50px}
@@ -289,6 +315,7 @@ table td {
     width: 100vw;
   }
 
+
   .menu-bar li:first-child ul:nth-child(1) {
     border-right: none;
     border-bottom: var(--border);
@@ -311,6 +338,8 @@ table td {
   .menu.show {
     display: block;
     border-top: 1px solid black;
+
+    height: fit-content;
   }
 
   .menu-bar {

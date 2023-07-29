@@ -20,19 +20,25 @@
           </a>
           <nav class="menu">
             <ul class="menu-bar">
-              <li><a class="nav-link" href="/palaces">Palace/Fort List</a></li>
+              <li><a class="nav-link" href="/palaces"><div>Palace/Fort List</div></a></li>
               <% if (user) { %>
                 <li>
-                  <a class="nav-link" href="/palaces/newPalaces">Add Palace/Fort</a>
+                  <a class="nav-link" href="/palaces/newPalaces"><div>Add Palace/Fort</div></a>
                 </li>
                 <li>
-                  <a class="nav-link" href="/logout">Logout</a>
+                  <a class="nav-link" href="/logout">
+                    <div>
+                      Logout
+                    </div>
+                  </a>
                 </li>
                 <% } else { %>
                   <li>
-                    <a class="nav-link" href="/auth/google"><div>
+                    <a class="nav-link" href="/auth/google">
+                      <div>
                       LOG IN&nbsp;<img class="loginImg" src="https://i.imgur.com/FHjYyi0.png">
-                    </div></a>
+                      </div>
+                    </a>
                   </li>
                 <% } %>
             </ul>
