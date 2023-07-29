@@ -389,6 +389,7 @@ td {
   }
 
   .menu-bar {
+    height: 160px !important;
     display: flex;
     flex-direction: column;
     align-items: stretch;
