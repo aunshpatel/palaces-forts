@@ -153,8 +153,11 @@
       <input type="submit" value="Add Image">
     </form>
 
+  <% } %>
     <br><br>
     <h2>Reviews</h2>
+
+  <% if(user) { %>
     <form class="review-form" method="POST" action="/palaces/<%= palaces._id %>/reviews">
       <label>Review:</label>
       <textarea name="content"></textarea>
