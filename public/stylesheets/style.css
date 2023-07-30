@@ -8,11 +8,6 @@ body {
   margin: 0;
   height: 100vh;
   background-color: #E8ECEB;
-  /* display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas: 
-    "header"
-    "main" */
 }
 
 #navTagImage {
@@ -50,8 +45,6 @@ body > main h1:first-child {
 
 #add-new-palace,
 #update-palace,
-/* #updatePalaceBtnForm, */
-/* #deletePalaceBtnForm, */
 .review-form {
   display: grid;
   grid-gap: 10px;
@@ -106,24 +99,6 @@ input[type="submit"], button{
 #show-page div:nth-child(even) {
   font-weight: bold;
 }
-
-/* table {
-  font-size: 20px;
-}
-
-table thead th {
-  padding: 5px;
-  border-bottom: 2px solid #424748;
-}
-
-table td {
-  padding: 10px;
-  text-align: center;
-} */
-
-/* #reviewsTable tr th, #reviewsTable tr td{
-  width: 95px;
-}  */
 
 .editReviewWarning{
   font-size: 12px;
@@ -207,7 +182,6 @@ tr {
 }
 
 td {
-  /* text-align: center; */
   border-bottom: none;
   border-left: none;
 }
@@ -219,11 +193,6 @@ td {
 .link > a {
   color: blue;
 }
-
-/* #show-page > table > tbody > tr:not(:last-child):not(#editPalaceRow) > td,
-#show-page > table > tbody > tr:not(:last-child):not(#deletePalaceRow) > td{
-  text-align: left;
-} */
 
 #show-page > table > tbody > tr > td {
   text-align: left;
@@ -376,7 +345,9 @@ td {
   margin-right: 10px;
 }
 
-.nav-end{height:50px}
+.nav-end{
+  height:50px
+}
 
 .nav-start,
 .nav-end,
@@ -433,7 +404,6 @@ td {
     width: 100vw;
   }
 
-
   .menu-bar li:first-child ul:nth-child(1) {
     border-right: none;
     border-bottom: var(--border);
@@ -456,7 +426,6 @@ td {
   .menu.show {
     display: block;
     border-top: 1px solid black;
-
     height: fit-content;
   }
 
@@ -486,12 +455,6 @@ td {
     padding-bottom: 0.5rem;
     border-bottom: var(--border);
   }
-
-  /* input[type="submit"], button{
-    background-color: #424748;
-    color:#fff;
-    margin: 5px;
-  } */
 }
 
 @media  (max-width: 324.9px) {
@@ -674,13 +637,16 @@ td {
     width: 340px;
     height: 360px;
   }
+
   .palaceImage{
     width: 290px;
   }
+
   .slider{
-   width: 320px;
-   height:340px;
+    width: 320px;
+    height:340px;
   }
+
   .slider div{
     height:310px
   }
@@ -844,14 +810,17 @@ td {
     width: 390px;
     height: 350px;
   }
+
   .palaceImage{
     width: 400px;
     height: 260px;
   }
+
   .slider{
    width: 350px;
    height:340px;
   }
+
   .slider div{
     height:330px
   }
@@ -920,14 +889,17 @@ td {
     width: 560px;
     height: 360px;
   }
+
   .palaceImage{
     width: 400px;
     height: 260px;
   }
+
   .slider{
    width: 540px;
    height:340px;
   }
+
   .slider div{
     height:330px
   }
@@ -939,6 +911,7 @@ td {
   #palaceDetailsTB tr td:first-child{
     width:40%
   }
+
   #palaceDetailsTB tr td:last-child{
     width:60%
   }
@@ -968,6 +941,7 @@ td {
   #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:15%
   }
+
   #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 35%;
   }
@@ -992,7 +966,6 @@ td {
 
   #reviewsTableDiv {
     width:580px;
-    /* height:400px; */
     overflow:auto;
   }
 
@@ -1006,14 +979,17 @@ td {
     width: 640px;
     height: 360px;
   }
+
   .palaceImage{
     width: 400px;
     height: 260px;
   }
+
   .slider{
    width: 620px;
    height:340px;
   }
+  
   .slider div{
     height:330px
   }

@@ -151,7 +151,6 @@
           <br><br>
           <% if (user?._id.equals(image.user)) { %>
           <form action="/photos/<%= image._id %>?_method=DELETE" method="POST">
-            <!-- <button name="deletePhoto" type="submit">Delete Photo</button> -->
             <input type="submit" name="deletePhoto" value="Delete Photo">
           </form>
           <% } %>
@@ -200,12 +199,6 @@
             <th>Rating</th>
             <th></th>
             <th></th>
-            <!-- <% palaces.reviews.forEach(function(r) { %>
-            <% if (user?._id.equals(r.user)) { %>
-            <th></th>
-            <th></th>
-            <% } %>
-            <% }); %> -->
           </tr>
         </thead>
         <tbody id="reviewsTableTB">
@@ -238,40 +231,14 @@
                  <div class="editReviewWarning">You can't delete this review</div>
                 </td>
                 <% } %>
-            <!-- </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><strong></strong></td>
-              <% if (user?._id.equals(r.user)) { %>
-                <td>
-                  
-                </td>
-                <td>
-                  
-                </td>
-                <% } %>
-            </tr> -->
           <% }); %>
           <tr>
-            <!-- <td colspan="3"></td> -->
             <td></td>
               <td></td>
               <td></td>
             <td><strong><%= (total / palaces.reviews.length).toFixed(1) %></strong></td>
             <td></td>
             <td></td>
-            <!-- <% palaces.reviews.forEach(function(r) { %>
-            <% if (user?._id.equals(r.user)) { %>
-              <td>
-                
-              </td>
-              <td>
-                
-              </td>
-              <% } %>
-            <% }); %> -->
           </tr>
         </tbody>
       </table>
