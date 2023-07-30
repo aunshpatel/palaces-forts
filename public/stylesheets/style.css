@@ -479,6 +479,11 @@ td {
     padding-bottom: 0.5rem;
     border-bottom: var(--border);
   }
+
+  input[type="submit"]{
+    background-color: rgb(235, 234, 235);
+    color:rgb(58, 62, 63)
+  }
 }
 
 @media  (max-width: 324.9px) {
