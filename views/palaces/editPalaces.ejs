@@ -1,4 +1,6 @@
 <%- include('../partials/header') %>
+<h1><%= title %></h1>
+<br>
 
 <form id="update-palace" action="/palaces/<%= palace._id %>?_method=PUT" method="POST">
   <label>Name: </label>
