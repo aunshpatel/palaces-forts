@@ -213,9 +213,7 @@ td {
   width:60%
 }
 
-#palaceDetailsTB tr:nth-child(10) td:first-child, #palaceDetailsTB tr:nth-child(11) td:first-child{
-  /* justify-content: start;
-  display: flex; */
+.trButton td form{
   text-align: end;
 }
 
