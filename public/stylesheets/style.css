@@ -214,8 +214,9 @@ td {
 }
 
 #palaceDetailsTB tr:nth-child(10) td:first-child, #palaceDetailsTB tr:nth-child(11) td:first-child{
-  justify-content: start;
-  display: flex;
+  /* justify-content: start;
+  display: flex; */
+  text-align: end;
 }
 
 .imageSlider{
