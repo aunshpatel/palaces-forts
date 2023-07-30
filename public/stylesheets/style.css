@@ -50,8 +50,8 @@ body > main h1:first-child {
 
 #add-new-palace,
 #update-palace,
-#updatePalaceBtnForm,
-#deletePalaceBtnForm,
+/* #updatePalaceBtnForm, */
+/* #deletePalaceBtnForm, */
 .review-form {
   display: grid;
   grid-gap: 10px;
@@ -235,6 +235,11 @@ td {
 }
 #palaceDetailsTB tr td:last-child{
   width:60%
+}
+
+#palaceDetailsTB tr:nth-child(10) td:first-child, #palaceDetailsTB tr:nth-child(11) td:first-child{
+  justify-content: start;
+  display: flex;
 }
 
 .imageSlider{
