@@ -1,7 +1,7 @@
 # Palaces and Forts of India
 This project is a website where a person can add, update, delete and view the details of palaces and forts of India along with adding, updating and deleting the reviews. A user can also add and delete the images by adding link to already existing images on Google.
 
-# Screenshot
+# Screenshots
 1) Palace List View(landing page):
 ![Palace List View(landing page)](/public/images-for-readme/palace-list-view.png/?raw=true)
 
