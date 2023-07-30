@@ -114,17 +114,34 @@ table td {
   text-align: center;
 } */
 
-#allPalacesTable {
+/* #reviewsTable tr th, #reviewsTable tr td{
+  width: 95px;
+}  */
+
+.editReviewWarning{
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#allPalacesTable, #reviewsTable {
   width: 800px;
   font-size: 20px;
 }
+#allPalacesTable{
+  max-height: 500px;
+  overflow: auto;
+}
+#reviewsTable{
+  max-height: 250px;
+  overflow: auto;
+}
 
-#allPalacesTH th {
+#allPalacesTH th, #reviewsTableTH th {
   padding: 5px;
   border-bottom: 2px solid #424748;
 }
 
-#allPalacesTH {
+#allPalacesTH{
   display: table;
   width: calc(100% - 17px); 
 }
@@ -135,11 +152,39 @@ table td {
   overflow-y: auto; 
 }
 
-th:first-child, th:last-child, td:first-child, td:last-child{
+#allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
   width:12.5%
 }
-th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+#allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
   width: 37.5%;
+}
+
+#reviewsTableTB{
+  border: 1px solid black;
+}
+
+#reviewsTableTH th:first-child, #reviewsTableTB td:first-child{
+  width:18%;
+}
+
+#reviewsTableTH th:nth-child(2), #reviewsTableTB td:nth-child(2){
+  width:14%
+}
+
+#reviewsTableTH th:nth-child(3), #reviewsTableTB td:nth-child(3){
+  width:30%
+}
+
+#reviewsTableTH th:nth-child(4), #reviewsTableTB td:nth-child(4){
+  width:14%
+}
+
+#reviewsTableTH th:nth-child(5), #reviewsTableTB td:nth-child(5){
+  width:15%
+}
+
+#reviewsTableTH th:nth-child(6), #reviewsTableTB td:nth-child(6){
+  width:9%
 }
 
 th, td {
@@ -155,11 +200,10 @@ tr {
 }
 
 td {
-  text-align: center;
+  /* text-align: center; */
   border-bottom: none;
   border-left: none;
 }
-
 
 .loginImg{
   height:20px;
@@ -169,25 +213,41 @@ td {
   color: blue;
 }
 
-#show-page > table > tbody > tr:not(:last-child):not(#editPalaceRow) > td,
+/* #show-page > table > tbody > tr:not(:last-child):not(#editPalaceRow) > td,
 #show-page > table > tbody > tr:not(:last-child):not(#deletePalaceRow) > td{
+  text-align: left;
+} */
+
+#show-page > table > tbody > tr > td {
   text-align: left;
 }
 
-#show-page > table > tbody> tr:not(:last-child) > td:first-child {
+#palaceDetailsTB > tr:not(:last-child) > td:first-child {
   font-weight: bold;
+}
+
+#palaceDetailsTable, #palaceDetailsTB{
+  width:600px;
+}
+
+#palaceDetailsTB tr td:first-child{
+  width:40%
+}
+#palaceDetailsTB tr td:last-child{
+  width:60%
 }
 
 .imageSlider{
   width:700px;
-  height:400px;
+  height:350px;
   border:1px solid black;
   padding: 5px;
   margin-bottom:25px
 }
+
 .slider{
   overflow:auto;
-  height:350px;
+  height:340px;
   white-space:nowrap;
 }
 
@@ -418,15 +478,36 @@ td {
 
 @media  (max-width: 324.9px) {
   .imageSlider{
-     width: 250px;
-     height:280px
-  } 
-  .slider{
-   width: 230px;
-   height:280px;
+    width: 290px;
+    height: 340px;
   }
+  .palaceImage{
+    width: 200px;
+  }
+  .slider{
+   width: 280px;
+   height:330px;
+  }
+  .slider div{
+    height:280px
+  }
+  .slider > div > img{
+    width:260px
+  }
+
   #noPictures{
    font-size: 16px;
+  }
+
+  #palaceDetailsTable, #palaceDetailsTB{
+    width:290px
+  }
+
+  #palaceDetailsTB tr td:first-child{
+    width:40%
+  }
+  #palaceDetailsTB tr td:last-child{
+    width:60%
   }
 
   #allPalacesTable {
@@ -451,10 +532,10 @@ td {
     overflow-x: auto;
   }
   
-  th:first-child, th:last-child, td:first-child, td:last-child{
+  #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:12.5%
   }
-  th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+  #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 37.5%;
   }
   
@@ -475,9 +556,43 @@ td {
     border-bottom: none;
     border-left: none;
   }
+  #reviewsTableDiv {
+    width:300px;
+    overflow:auto;
+  }
+
+  #reviewsTable{
+    width: 550px;
+  }
 }
 
 @media  (min-width: 325px) and (max-width: 374.9px){
+  .imageSlider{
+    width: 310px;
+    height: 340px;
+  }
+  .palaceImage{
+    width: 270px;
+  }
+  .slider{
+   width: 290px;
+   height:330px;
+  }
+  .slider div{
+    height:290px
+  }
+
+  #palaceDetailsTable, #palaceDetailsTB{
+    width:300px;
+  }
+
+  #palaceDetailsTB tr td:first-child{
+    width:40%
+  }
+  #palaceDetailsTB tr td:last-child{
+    width:60%
+  }
+
   #allPalacesTable {
     width: 335px;
     font-size: 13px;
@@ -500,14 +615,14 @@ td {
     overflow-x: auto;
   }
   
-  th:first-child, th:last-child, td:first-child, td:last-child{
+  #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:12.5%
   }
-  th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+  #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 37.5%;
   }
   
-  th, td {
+  #allPalacesTable th, #allPalacesTable td {
     padding: 5px;
     text-align: center;
     word-break: break-all; 
@@ -524,9 +639,45 @@ td {
     border-bottom: none;
     border-left: none;
   }
+
+  #reviewsTableDiv {
+    width:300px;
+    height:400px;
+    overflow:auto;
+  }
+
+  #reviewsTable{
+    width: 550px;
+  }
 }
 
 @media  (min-width: 375px) and (max-width: 399.9px){
+  .imageSlider{
+    width: 340px;
+    height: 360px;
+  }
+  .palaceImage{
+    width: 290px;
+  }
+  .slider{
+   width: 320px;
+   height:340px;
+  }
+  .slider div{
+    height:310px
+  }
+
+  #palaceDetailsTable, #palaceDetailsTB{
+    width:330px;
+  }
+
+  #palaceDetailsTB tr td:first-child{
+    width:40%
+  }
+  #palaceDetailsTB tr td:last-child{
+    width:60%
+  }
+
   #allPalacesTable {
     width: 345px;
     font-size: 13px;
@@ -549,14 +700,14 @@ td {
     overflow-x: auto;
   }
   
-  th:first-child, th:last-child, td:first-child, td:last-child{
+  #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:12.5%
   }
-  th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+  #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 37.5%;
   }
   
-  th, td {
+  #allPalacesTable th, #allPalacesTable td {
     padding: 5px;
     text-align: center;
     word-break: break-all; 
@@ -573,9 +724,45 @@ td {
     border-bottom: none;
     border-left: none;
   }
+
+  #reviewsTableDiv {
+    width:350px;
+    height:400px;
+    overflow:auto;
+  }
+
+  #reviewsTable{
+    width: 550px;
+  }
 }
 
 @media  (min-width: 400px) and (max-width: 424.9px){
+  .imageSlider{
+    width: 390px;
+    height: 350px;
+  }
+  .palaceImage{
+    width: 400px;
+    height: 260px;
+  }
+  .slider{
+   width: 350px;
+   height:340px;
+  }
+  .slider div{
+    height:330px
+  }
+
+  #palaceDetailsTable, #palaceDetailsTB{
+    width:380px;
+  }
+
+  #palaceDetailsTB tr td:first-child{
+    width:40%
+  }
+  #palaceDetailsTB tr td:last-child{
+    width:60%
+  }
   #allPalacesTable {
     width: 385px;
     font-size: 13px;
@@ -598,14 +785,14 @@ td {
     overflow-x: auto;
   }
   
-  th:first-child, th:last-child, td:first-child, td:last-child{
+  #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:12.5%
   }
-  th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+  #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 37.5%;
   }
   
-  th, td {
+  #allPalacesTable th, #allPalacesTable td {
     padding: 5px;
     text-align: center;
     word-break: break-all; 
@@ -622,9 +809,46 @@ td {
     border-bottom: none;
     border-left: none;
   }
+
+  #reviewsTableDiv {
+    width:370px;
+    height:400px;
+    overflow:auto;
+  }
+
+  #reviewsTable{
+    width: 550px;
+  }
 }
 
 @media  (min-width: 425px) and (max-width: 599.9px){
+  .imageSlider{
+    width: 390px;
+    height: 350px;
+  }
+  .palaceImage{
+    width: 400px;
+    height: 260px;
+  }
+  .slider{
+   width: 350px;
+   height:340px;
+  }
+  .slider div{
+    height:330px
+  }
+
+  #palaceDetailsTable, #palaceDetailsTB{
+    width:400px;
+  }
+
+  #palaceDetailsTB tr td:first-child{
+    width:40%
+  }
+  #palaceDetailsTB tr td:last-child{
+    width:60%
+  }
+  
   #allPalacesTable {
     width: 400px;
     font-size: 13px;
@@ -647,14 +871,14 @@ td {
     overflow-x: auto;
   }
   
-  th:first-child, th:last-child, td:first-child, td:last-child{
+  #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:15%
   }
-  th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+  #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 35%;
   }
   
-  th, td {
+  #allPalacesTable th, #allPalacesTable td {
     padding: 5px;
     text-align: center;
     word-break: break-all; 
@@ -674,6 +898,33 @@ td {
 }
 
 @media  (min-width: 600px) and (max-width: 767.9px){
+  .imageSlider{
+    width: 560px;
+    height: 360px;
+  }
+  .palaceImage{
+    width: 400px;
+    height: 260px;
+  }
+  .slider{
+   width: 540px;
+   height:340px;
+  }
+  .slider div{
+    height:330px
+  }
+
+  #palaceDetailsTable, #palaceDetailsTB{
+    width:580px;
+  }
+
+  #palaceDetailsTB tr td:first-child{
+    width:40%
+  }
+  #palaceDetailsTB tr td:last-child{
+    width:60%
+  }
+
   #allPalacesTable {
     width: 550px;
     font-size: 13px;
@@ -696,14 +947,14 @@ td {
     overflow-x: auto;
   }
   
-  th:first-child, th:last-child, td:first-child, td:last-child{
+  #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:15%
   }
-  th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+  #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 35%;
   }
   
-  th, td {
+  #allPalacesTable th, #allPalacesTable td {
     padding: 5px;
     text-align: center;
     word-break: break-all; 
@@ -720,9 +971,35 @@ td {
     border-bottom: none;
     border-left: none;
   }
+
+  #reviewsTableDiv {
+    width:580px;
+    /* height:400px; */
+    overflow:auto;
+  }
+
+  #reviewsTable{
+    width: 550px;
+  }
 }
 
 @media  (min-width: 768px) and (max-width: 990.9px){
+  .imageSlider{
+    width: 640px;
+    height: 360px;
+  }
+  .palaceImage{
+    width: 400px;
+    height: 260px;
+  }
+  .slider{
+   width: 620px;
+   height:340px;
+  }
+  .slider div{
+    height:330px
+  }
+
   #allPalacesTable {
     width: 720px;
     font-size: 13px;
@@ -745,14 +1022,14 @@ td {
     overflow-x: auto;
   }
   
-  th:first-child, th:last-child, td:first-child, td:last-child{
+  #allPalacesTable th:first-child, #allPalacesTable th:last-child, #allPalacesTable td:first-child, #allPalacesTable td:last-child{
     width:15%
   }
-  th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+  #allPalacesTable th:nth-child(2), #allPalacesTable th:nth-child(3), #allPalacesTable td:nth-child(2), #allPalacesTable td:nth-child(3){
     width: 35%;
   }
   
-  th, td {
+  #allPalacesTable th, #allPalacesTable td {
     padding: 5px;
     text-align: center;
     word-break: break-all; 

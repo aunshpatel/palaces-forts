@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <table>
-    <tbody>
+  <table id="palaceDetailsTable">
+    <tbody id="palaceDetailsTB">
       <tr>
         <td>
           Name:
@@ -86,21 +86,26 @@
       
       <% if(user) { %>
         <% if (user?._id.equals(palaces.user)) { %>
-          <tr id="deletePalaceRow">
-            <td colspan="2">
+          <tr>
+            <td>
               <form id="deletePalaceBtnForm" action="/palaces/<%= palaces._id %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete Palace/Fort">
               </form>
             </td>
+            <td>
+              <form id="updatePalaceBtnForm" action="/palaces/<%= palaces._id %>/editPalaces" method="POST">
+                <input type="submit" value="Update Palace/Fort">
+              </form>
+            </td>
           </tr>
         <% } %>
-        <tr id="editPalaceRow">
+        <!-- <tr >
           <td colspan="2">
             <form id="updatePalaceBtnForm" action="/palaces/<%= palaces._id %>/editPalaces" method="POST">
               <input type="submit" value="Update Palace/Fort">
             </form>
           </td>
-        </tr>
+        </tr> -->
       <% } %>
 
       <tr>
@@ -170,51 +175,92 @@
   <% } %>
     
   <% if (palaces.reviews.length) { %>
-    <table>
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Date</th>
-          <th>Review</th>
-          <th>Rating</th>
-          <% palaces.reviews.forEach(function(r) { %>
-          <% if (user?._id.equals(r.user)) { %>
-          <th></th>
-          <th></th>
-          <% } %>
-          <% }); %>
-        </tr>
-      </thead>
-      <tbody>
-        <% let total = 0 %>
-        <% palaces.reviews.forEach(function(r) { %>
-          <% total += r.rating %>
+    <div id="reviewsTableDiv">
+      <table id="reviewsTable">
+        <thead id="reviewsTableTH">
           <tr>
-            <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
-              <br>
-              <%= r.userName %>
-            </td>
-            <td><%= r.createdAt.toLocaleDateString() %></td>
-            <td><pre><%= r.content %></pre></td>
-            <td><%= r.rating %></td>
+            <th>User</th>
+            <th>Date</th>
+            <th>Review</th>
+            <th>Rating</th>
+            <th></th>
+            <th></th>
+            <!-- <% palaces.reviews.forEach(function(r) { %>
             <% if (user?._id.equals(r.user)) { %>
-            <td>
-              <a href="/palaces/<%= r._id %>/editReviews">Edit Review</a>
-            </td>
-            <td>
-              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
-              </form>
-            </td>
+            <th></th>
+            <th></th>
             <% } %>
+            <% }); %> -->
           </tr>
-        <% }); %>
-        <tr>
-          <td colspan="3"></td>
-          <td><strong><%= (total / palaces.reviews.length).toFixed(1) %></strong></td>
-        </tr>
-      </tbody>
-    </table>
+        </thead>
+        <tbody id="reviewsTableTB">
+          <% let total = 0 %>
+          <% palaces.reviews.forEach(function(r) { %>
+            <% total += r.rating %>
+            <tr>
+              <td>
+                <img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
+                <br>
+                <%= r.userName %>
+              </td>
+              <td><%= r.createdAt.toLocaleDateString() %></td>
+              <td><pre><%= r.content %></pre></td>
+              <td><%= r.rating %></td>
+              <% if (user?._id.equals(r.user)) { %>
+              <td>
+                <a href="/palaces/<%= r._id %>/editReviews">Edit Review</a>
+              </td>
+              <td>
+                <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                  <button type="submit">Delete</button>
+                </form>
+              </td>
+              <% } else { %>
+                <td>
+                  <div class="editReviewWarning">You can't edit this review</div>
+                </td>
+                <td>
+                 <div class="editReviewWarning">You can't delete this review</div>
+                </td>
+                <% } %>
+            <!-- </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><strong></strong></td>
+              <% if (user?._id.equals(r.user)) { %>
+                <td>
+                  
+                </td>
+                <td>
+                  
+                </td>
+                <% } %>
+            </tr> -->
+          <% }); %>
+          <tr>
+            <!-- <td colspan="3"></td> -->
+            <td></td>
+              <td></td>
+              <td></td>
+            <td><strong><%= (total / palaces.reviews.length).toFixed(1) %></strong></td>
+            <td></td>
+            <td></td>
+            <!-- <% palaces.reviews.forEach(function(r) { %>
+            <% if (user?._id.equals(r.user)) { %>
+              <td>
+                
+              </td>
+              <td>
+                
+              </td>
+              <% } %>
+            <% }); %> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
   <% } else { %>
     <h2>This Palace/Fort Has Reviews Yet</h2>
   <% } %>
