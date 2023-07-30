@@ -33,6 +33,6 @@ Project planning: https://trello.com/invite/b/AIitKkul/ATTI7308897aa726d3a5d8119
 
 Deployment URL: https://palaces-forts-bf7364a2bce5.herokuapp.com/palaces
 
-# Next Steps
+# Next Step(s)
 
 - Updating the website so that a user can add their clicked image instead of links
