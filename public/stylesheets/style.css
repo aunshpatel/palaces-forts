@@ -90,6 +90,13 @@ body > main h1:first-child {
   margin-left: auto;
 }
 
+input[type="submit"], button{
+  background-color: #424748;
+  color:#fff;
+  padding:10px !important;
+  border: 0px;
+}
+
 #show-page {
   display: grid;
   grid-template-columns: auto auto;
@@ -480,10 +487,11 @@ td {
     border-bottom: var(--border);
   }
 
-  input[type="submit"], button{
+  /* input[type="submit"], button{
     background-color: #424748;
     color:#fff;
-  }
+    margin: 5px;
+  } */
 }
 
 @media  (max-width: 324.9px) {
