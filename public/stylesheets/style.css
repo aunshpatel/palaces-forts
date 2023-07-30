@@ -480,9 +480,9 @@ td {
     border-bottom: var(--border);
   }
 
-  input[type="submit"]{
-    background-color: rgb(235, 234, 235);
-    color:rgb(58, 62, 63)
+  input[type="submit"], button{
+    background-color: #000;
+    color:#fff;
   }
 }
 
