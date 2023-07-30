@@ -151,7 +151,8 @@
           <br><br>
           <% if (user?._id.equals(image.user)) { %>
           <form action="/photos/<%= image._id %>?_method=DELETE" method="POST">
-            <button name="deletePhoto" type="submit">Delete Photo</button>
+            <!-- <button name="deletePhoto" type="submit">Delete Photo</button> -->
+            <input type="submit" name="deletePhoto" value="Delete Photo">
           </form>
           <% } %>
           
