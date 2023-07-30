@@ -87,18 +87,6 @@
       
       <% if(user) { %>
         <% if (user?._id.equals(palaces.user)) { %>
-          <!-- <tr>
-            <td>
-              <form id="deletePalaceBtnForm" action="/palaces/<%= palaces._id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Palace/Fort">
-              </form>
-            </td>
-            <td>
-              <form id="updatePalaceBtnForm" action="/palaces/<%= palaces._id %>/editPalaces" method="POST">
-                <input type="submit" value="Update Palace/Fort">
-              </form>
-            </td>
-          </tr> -->
           <tr>
             <td rowspan="2">
               <form id="deletePalaceBtnForm" action="/palaces/<%= palaces._id %>?_method=DELETE" method="POST">
