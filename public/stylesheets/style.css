@@ -221,7 +221,7 @@ td {
 
 .imageSlider{
   width:700px;
-  height:350px;
+  height:360px;
   border:1px solid black;
   padding: 5px;
   margin-bottom:25px
@@ -229,7 +229,7 @@ td {
 
 .slider{
   overflow:auto;
-  height:340px;
+  height:350px;
   white-space:nowrap;
 }
 
