@@ -13,8 +13,7 @@ async function create(req, res) {
     req.body.user = req.user.id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
-
-    console.log(req.body.userName);
+    
     palace.reviews.push(req.body);
     try {
         await palace.save();
