@@ -244,6 +244,7 @@ td {
 #palaceDetailsTable, #palaceDetailsTB{
   width:600px;
 }
+
 #palaceDetailsTB tr td{
   padding: 8px;
 }
@@ -323,9 +324,6 @@ td {
   height:50px;
   background-color: #003153 !important;
 }
-/* .nav-link div, .nav-link{
-  color:#fff
-} */
 
 .container {
   display: flex;
@@ -614,6 +612,7 @@ td {
   #palaceDetailsTB tr td:first-child{
     width:40%
   }
+  
   #palaceDetailsTB tr td:last-child{
     width:60%
   }
