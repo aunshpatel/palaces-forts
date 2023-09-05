@@ -26,7 +26,7 @@ This project is a website where a person can add, update, delete and view the de
 - CSS
 - MongoDB
 
-# Getting Started
+# Project Details
 
 Project planning: https://trello.com/invite/b/AIitKkul/ATTI7308897aa726d3a5d8119d32ad097ba818D9397D/project-2palace-forts-list
 
