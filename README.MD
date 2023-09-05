@@ -21,7 +21,8 @@ This project is a website where a person can add, update, delete and view the de
 
 # Technologies Used
 
-- Express JS
+- Express
+- NodeJS
 - HTML
 - CSS
 - MongoDB
